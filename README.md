@@ -7,24 +7,12 @@ This image is going to experiment with what a "born from cloud native" UNIX term
 It is used in conjuction with a [dotfile manager](https://dotfiles.github.io/utilities/) and designed to be the companion terminal experience for cloud-native desktops. 
 We're starting small but have big aspirations.
 
-- Starts with the latest Alpine image from the [Toolbx Community Images](https://github.com/toolbx-images/images)
+- Starts with the latest Arch image from the [Toolbx Community Images](https://github.com/toolbx-images/images)
 - Adds some quality of life
-  - `starship` prompt for that <3
-  - `just` for task execution
-  - `chezmoi` for dotfile management
-  - `btop` for process management
-  - `micro` and `helix` text editors
-  - `python3` 
-  - Some common power tools: `plocate`, `fzf`, `cosign`, `ripgrep`, `github-cli`, and `ffmpeg`
-  - CLI tools recommended by [rawkode](https://www.youtube.com/watch?v=TNlDSG1iDW8)
-    - [zellij](https://github.com/zellij-org/zellij) - terminal workspace
-    - [direnv](https://direnv.net/) - environment variable extension for your shell 
-    - [atuin](https://github.com/ellie/atuin) - magical shell history
 - Host Management QoL
   - These are meant for occasional one off commands, not complex workflows
-    - Auto symlink the flatpak, podman, and docker commands
+    - Auto symlink the flatpak and podman
     - Auto symlink rpm-ostree for Fedora
-    - Auto symlink transactional-update for openSUSE MicroOS
 
 ## How to use
 
@@ -32,12 +20,12 @@ We're starting small but have big aspirations.
 
 If you use distrobox:
 
-    distrobox create -i ghcr.io/ublue-os/boxkit -n boxkit
+    distrobox create -i ghcr.io/pkulak/boxkit -n boxkit
     distrobox enter boxkit
     
 If you use toolbx:
 
-    toolbox create -i ghcr.io/ublue-os/boxkit -c boxkit
+    toolbox create -i ghcr.io/pkulak/boxkit -c boxkit
     toolbox enter boxkit
 
 ### Pull down your config
@@ -75,7 +63,7 @@ Also apk is fast. Watch the video for more!
 
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
 
-    cosign verify --key cosign.pub ghcr.io/ublue-os/boxkit
+    cosign verify --key cosign.pub ghcr.io/pkulak/boxkit
     
 If you're forking this repo you should [read the docs](https://docs.github.com/en/actions/security-guides/encrypted-secrets) on keeping secrets in github. You need to [generate a new keypair](https://docs.sigstore.dev/cosign/overview/) with cosign. The public key can be in your public repo (your users need it to check the signatures), and you can paste the private key in Settings -> Secrets -> Actions.
 
