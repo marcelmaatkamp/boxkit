@@ -1,7 +1,7 @@
 bc
-dragon-drop
 exa
 chezmoi
+ffmpeg
 fish 
 gocryptfs
 htop
@@ -12,12 +12,9 @@ lf
 mpv
 neovim
 neovim-symlinks
-sublime-merge
+slurp
 swayimg
-xorg-xeyes
-yt-dlp
-zathura-pdf-mupdf
-sublime-music
 wl-clipboard
 wf-recorder
-slurp
+yt-dlp
+zathura-pdf-mupdf
