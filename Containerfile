@@ -5,6 +5,8 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="phil@kulak.us"
 
+RUN pacman -Syu --noconfirm
+
 ARG user=makepkg
 
 RUN useradd --system --create-home $user && \
