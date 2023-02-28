@@ -24,7 +24,7 @@ RUN git clone https://aur.archlinux.org/yay.git && \
 
 # Install my packages
 COPY extra-packages .
-RUN cat extra-packages | xargs yay -S --noconfirm
+RUN cat extra-packages | xargs yay -S --noconfirm --removemake
 RUN rm extra-packages
 
 # Become root again and do rooty things
