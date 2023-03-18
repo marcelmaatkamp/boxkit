@@ -16,6 +16,7 @@ neovim
 neovim-symlinks
 pgen
 ripgrep
+rust-analyzer
 slurp
 sublime-merge
 sublime-music
