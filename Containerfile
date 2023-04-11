@@ -30,7 +30,8 @@ RUN rm extra-packages
 # Become root again and do rooty things
 USER root
 
-RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \ 
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
+    ln -fs /usr/bin/distrobox-host-exec /usr/bin/flatpak && \
     ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
     ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/rpm-ostree
      
