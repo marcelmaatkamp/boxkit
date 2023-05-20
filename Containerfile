@@ -30,10 +30,14 @@ RUN rm extra-packages
 # Become root again and do rooty things
 USER root
 
+# Give Firefox a desktop file
+COPY firefox.desktop /usr/share/applications/
+
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
     ln -fs /usr/bin/distrobox-host-exec /usr/bin/flatpak && \
     ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
-    ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/rpm-ostree
+    ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/rpm-ostree && \
+    ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/firefox
      
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen && \
